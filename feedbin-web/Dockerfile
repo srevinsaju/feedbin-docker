@@ -6,7 +6,7 @@ WORKDIR /app
 
 RUN apk add --no-cache \
 	git \
-	libidn11-dev
+	libidn11
 
 RUN git clone https://github.com/feedbin/feedbin.git /app
 
