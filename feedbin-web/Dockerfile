@@ -9,8 +9,9 @@ RUN apk add --no-cache \
 	libidn-dev \
 	libpq-dev \
 	nodejs \
-	imagemagick-dev \
-	vips-dev \
+	imagemagick \
+	vips \
+	tzdata \
 	git
 
 RUN git clone https://github.com/feedbin/feedbin.git /app
