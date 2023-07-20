@@ -146,8 +146,8 @@ services:
     container_name: feedbin-extract
     restart: unless-stopped
 
-  camo:
-    image: increments/camo
+  feedbin-privacy_please:
+    build: ./feedbin-privacy_please
     container_name: feedbin-camo
     environment:
       - PORT=8081
