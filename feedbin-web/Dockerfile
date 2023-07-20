@@ -5,8 +5,7 @@ ARG FEEDBIN_URL
 WORKDIR /app
 
 RUN apk add --no-cache \
-	git \
-	libidn11
+	git
 
 RUN git clone https://github.com/feedbin/feedbin.git /app
 
