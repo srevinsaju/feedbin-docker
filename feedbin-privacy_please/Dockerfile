@@ -1,4 +1,4 @@
-FROM ruby:apline
+FROM ruby:alpine
 
 WORKDIR /app
 
