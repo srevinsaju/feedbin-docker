@@ -7,6 +7,7 @@ WORKDIR /app
 RUN apk add --no-cache \
 	build-base \
 	libidn-dev \
+	libpq \
 	git
 
 RUN git clone https://github.com/feedbin/feedbin.git /app
