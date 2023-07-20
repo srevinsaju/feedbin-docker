@@ -1,9 +1,8 @@
-FROM ruby:latest
+FROM ruby:alpine
 
 WORKDIR /app
 
-RUN apt-get update
-RUN apt-get install \
+RUN apk add --no-cache \
 	git
 
 RUN git clone https://github.com/feedbin/image.git /app

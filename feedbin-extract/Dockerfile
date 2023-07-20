@@ -1,4 +1,4 @@
-FROM node:19-alpine
+FROM node:alpine
 
 ARG EXTRACT_USER
 ARG EXTRACT_SECRET

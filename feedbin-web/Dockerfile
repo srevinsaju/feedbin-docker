@@ -1,11 +1,10 @@
-FROM ruby:latest
+FROM ruby:alpine
 
 ARG FEEDBIN_URL
 
 WORKDIR /app
 
-RUN apt-get update
-RUN apt-get install \
+RUN apk add --no-cache \
 	git \
 	libidn11-dev
 
