@@ -137,18 +137,6 @@ services:
       timeout: 20s
       retries: 3
 
-  feedbin-image:
-    build: ./feedbin-image
-    environment:
-      - AWS_ACCESS_KEY_ID=$MINIO_ACCESS_KEY
-      - AWS_SECRET_ACCESS_KEY=$MINIO_SECRET_KEY
-      - AWS_S3_BUCKET=$MINIO_BUCKET
-      - AWS_S3_ENDPOINT=https://$MINIO_HOST
-      - AWS_S3_PATH_STYLE
-      - REDIS_URL
-    container_name: feedbin-image
-    restart: unless-stopped
-
   feedbin-extract:
     build:
       context: ./feedbin-extract
