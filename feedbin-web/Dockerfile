@@ -8,6 +8,8 @@ RUN apk add --no-cache \
 	build-base \
 	libidn-dev \
 	libpq-dev \
+	postgresql-dev \
+	postgresql-client \
 	nodejs \
 	imagemagick \
 	vips \
