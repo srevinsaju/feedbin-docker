@@ -172,12 +172,12 @@ services:
       retries: 3
 
   feedbin-memcached:
-    image: memcached:latest
+    image: memcached:alpine
     container_name: feedbin-memcached
     restart: unless-stopped
 
   feedbin-redis:
-    image: redis:latest
+    image: redis:alpine
     container_name: feedbin-redis
     volumes:
       - feedbin_redis:/data
@@ -190,7 +190,7 @@ services:
       retries: 3
 
   feedbin-postgres:
-    image: postgres:latest
+    image: postgres:alpine
     container_name: feedbin-postgres
     environment:
       - POSTGRES_USER
