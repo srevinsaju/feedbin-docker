@@ -8,6 +8,7 @@ RUN apk add --no-cache \
 	build-base \
 	libidn-dev \
 	libpq-dev \
+	nodejs \
 	git
 
 RUN git clone https://github.com/feedbin/feedbin.git /app
