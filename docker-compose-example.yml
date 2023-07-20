@@ -178,7 +178,7 @@ services:
       retries: 3
 
   feedbin-postgres:
-    image: postgres:alpine
+    image: postgres:13-alpine
     container_name: feedbin-postgres
     environment:
       - POSTGRES_USER
