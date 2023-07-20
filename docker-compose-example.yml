@@ -118,7 +118,7 @@ services:
     restart: unless-stopped
 
   feedbin-elasticsearch:
-    image: elasticsearch:2.4
+    image: elasticsearch:8.5.3
     container_name: feedbin-elasticsearch
     environment:
       - bootstrap.memory_lock=true
@@ -136,15 +136,6 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
-
-  feedbin-refresher:
-    build: ./feedbin-refresher
-    environment:
-      - REDIS_URL
-      - TWITTER_KEY
-      - TWITTER_SECRET
-    container_name: feedbin-refresher
-    restart: unless-stopped
 
   feedbin-image:
     build: ./feedbin-image
@@ -181,12 +172,12 @@ services:
       retries: 3
 
   feedbin-memcached:
-    image: memcached:1.6-alpine
+    image: memcached:latest
     container_name: feedbin-memcached
     restart: unless-stopped
 
   feedbin-redis:
-    image: redis:6-alpine
+    image: redis:latest
     container_name: feedbin-redis
     volumes:
       - feedbin_redis:/data
@@ -199,7 +190,7 @@ services:
       retries: 3
 
   feedbin-postgres:
-    image: postgres:13-alpine
+    image: postgres:latest
     container_name: feedbin-postgres
     environment:
       - POSTGRES_USER

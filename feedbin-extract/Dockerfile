@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM node:19-alpine
 
 ARG EXTRACT_USER
 ARG EXTRACT_SECRET
@@ -6,12 +6,14 @@ ARG EXTRACT_SECRET
 WORKDIR /app
 
 RUN apk add --no-cache \
-    git \
-    nodejs \
-    npm \
-    && git clone https://github.com/feedbin/extract.git /app \
-    && npm ci \
-    && mkdir users \
-    && echo "${EXTRACT_SECRET}" > "users/${EXTRACT_USER}"
+	git
+
+RUN git clone https://github.com/feedbin/extract.git /app
+
+RUN npm install
+
+RUN mkdir users
+
+RUN echo "${EXTRACT_SECRET}" > "users/${EXTRACT_USER}"
 
 CMD ["node", "app/server.js"]
