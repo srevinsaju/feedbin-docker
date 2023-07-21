@@ -16,7 +16,7 @@ RUN apk add --no-cache \
 	tzdata \
 	git
 
-RUN git clone https://github.com/feedbin/feedbin.git /app
+RUN git clone https://github.com/feedbin/feedbin.git /app && rm -rf /app/.git
 
 RUN bundle install
 
