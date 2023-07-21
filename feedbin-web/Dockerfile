@@ -20,4 +20,6 @@ RUN git clone https://github.com/feedbin/feedbin.git /app && rm -rf /app/.git
 
 RUN bundle install
 
+RUN bundle exec rake assets:precompile
+
 CMD ["bundle", "exec", "foreman", "start"]
