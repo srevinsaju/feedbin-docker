@@ -18,7 +18,7 @@ x-common-variables: &feedbin-environment
 - EXTRACT_USER
 - EXTRACT_SECRET
 - CAMO_HOST=https://$CAMO_HOST
-- CAMO_KEY
+- PRIVACY_KEY
 - SMTP_ADDRESS
 - SMTP_USERNAME
 - SMTP_PASSWORD
@@ -151,7 +151,7 @@ services:
     container_name: feedbin-camo
     environment:
       - PORT=8081
-      - CAMO_KEY
+      - PRIVACY_KEY
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8081"]
