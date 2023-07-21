@@ -10,4 +10,4 @@ RUN git clone https://github.com/feedbin/privacy-please.git /app && rm -rf /app/
 
 RUN bundle install
 
-CMD ["bundle", "exec", "foreman", "start"]
+CMD ["PRIVACY_KEY=secret", "bundle", "exec", "foreman", "start"]
