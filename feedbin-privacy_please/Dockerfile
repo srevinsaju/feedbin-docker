@@ -1,5 +1,7 @@
 FROM ruby:alpine
 
+ARG CAMO_KEY
+
 WORKDIR /app
 
 RUN apk add --no-cache \
@@ -10,4 +12,6 @@ RUN git clone https://github.com/feedbin/privacy-please.git /app && rm -rf /app/
 
 RUN bundle install
 
-CMD ["PRIVACY_KEY=secret", "bundle", "exec", "foreman", "start"]
+ENV PRIVACY_KEY=$CAMO_KEY
+
+CMD ["bundle", "exec", "foreman", "start"]
