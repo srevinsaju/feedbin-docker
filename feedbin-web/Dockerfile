@@ -22,4 +22,6 @@ RUN bundle install
 
 RUN bundle exec rake assets:precompile
 
+ENV RAILS_SERVE_STATIC_FILES=true
+
 CMD ["bundle", "exec", "foreman", "start"]
