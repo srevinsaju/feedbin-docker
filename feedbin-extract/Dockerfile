@@ -8,7 +8,7 @@ WORKDIR /app
 RUN apk add --no-cache \
 	git
 
-RUN git clone https://github.com/feedbin/extract.git /app
+RUN git clone https://github.com/feedbin/extract.git /app && rm -rf /app/.git
 
 RUN npm install
 
