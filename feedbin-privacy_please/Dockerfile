@@ -10,4 +10,6 @@ RUN git clone https://github.com/feedbin/privacy-please.git /app && rm -rf /app/
 
 RUN bundle install --without development test
 
+RUN bundle exec rake assets:precompile
+
 CMD ["bundle", "exec", "foreman", "start"]
