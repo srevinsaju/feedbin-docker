@@ -8,6 +8,6 @@ RUN apk add --no-cache \
 
 RUN git clone https://github.com/feedbin/privacy-please.git /app
 
-RUN bundle install
+RUN bundle install --without development test
 
 CMD ["bundle", "exec", "foreman", "start"]
