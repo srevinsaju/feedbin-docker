@@ -10,8 +10,6 @@ Here is a breakdown of all the containers:
 
 * `web`: the puma rails app
 * `workers`: some of the sidekiq workers for background processing
-* `refresher`: sidekiq worker for refreshing feeds
-* `image`: sidekiq worker to find thumbnails
 * `extract`: nodejs service to extract article content from full web pages
 * `camo`: a node reverse proxy to prevent mixed content
 * `minio`: object storage for images, favicons, imports
@@ -23,7 +21,6 @@ Here is a breakdown of all the containers:
 
 As you can see it's a lot. Technically, you can give up on a few of them without breaking Feedbin:
 
-* `image`: you won't have thumbnails, which is not that important depending on your appearance settings.
 * `camo`: your browser will make the requests directly to the websites. Less privacy and risk or mixed content.
 * `elasticsearch`: you won't have full text search
 
