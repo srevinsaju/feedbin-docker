@@ -2,24 +2,28 @@
 name: Lint Code Base
 on:
   push:
-    branches:
-      - master
+    branches: [master, main]
   pull_request:
-    branches:
-      - master
+    branches: [master, main]
   workflow_dispatch:
 
 jobs:
   build:
     name: Lint Code Base
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3.0.2
+        uses: actions/checkout@v3
 
       - name: Lint Code Base
-        uses: github/super-linter@v4.0.2
+        uses: super-linter/super-linter@v5
         env:
+          VALIDATE_ALL_CODEBASE: false
           VALIDATE_ENV: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
