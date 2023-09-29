@@ -26,7 +26,7 @@ jobs:
   build:
     strategy:
       matrix:
-        containers: ["extract", "privacy_please", "web"]
+        container: ["extract", "privacy_please", "web"]
     runs-on: ubuntu-latest
     permissions:
       contents: read
